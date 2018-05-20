@@ -41,7 +41,7 @@
 #'
 #' @name quiz
 #' @export
-quiz <- function(..., caption = "Quiz") {
+quiz <- function(..., caption = "测试列表") {  # change Quiz to 测试列表
   
   # create table rows from questions
   index <- 1
@@ -66,8 +66,8 @@ quiz <- function(..., caption = "Quiz") {
 question <- function(text, 
                      ..., 
                      type = c("auto", "single", "multiple"),
-                     correct = "Correct!", 
-                     incorrect = "Incorrect.",
+                     correct = "您答对了，真的很棒!",     #change Correct! to 您答对了，太棒了！ 
+                     incorrect = "您答错了，继续努力！", #change Incorrect. to您答错了，继续努力！
                      allow_retry = FALSE,
                      random_answer_order = FALSE) {
   
@@ -110,7 +110,7 @@ question <- function(text,
   x$displayQuestionNumber <- FALSE
   x$disableRanking <- TRUE
   x$nextQuestionText <- ""
-  x$checkAnswerText <- "Submit Answer"
+  x$checkAnswerText <- "提交答案"  #change Submit Answer to 提交答案
   x$allowRetry <- allow_retry
   x$randomSortAnswers = random_answer_order
   x$json <- list(

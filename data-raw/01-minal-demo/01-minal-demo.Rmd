@@ -34,7 +34,7 @@ add <- function() {
 }
 ```
 
-## Topic 2
+## 测试环节
 
 ### Exercise with Hint
 
@@ -58,17 +58,17 @@ Some questions to verify that you understand the purposes of various base and re
 
 ```{r quiz}
 quiz(
-  question("Which package contains functions for installing other R packages?",
-    answer("base"),
-    answer("tools"),
-    answer("utils", correct = TRUE),
-    answer("codetools")
+  question("下面哪一项不是R语言的最基本数据类型?",
+    answer("字符character"),
+    answer("数值numeric"),
+    answer("日期Date", correct = TRUE),
+    answer("整数integer")
   ),
-  question("Which of the R packages listed below are used to create plots?",
-    answer("lattice", correct = TRUE),
-    answer("tools"),
-    answer("stats"),
-    answer("grid", correct = TRUE)
+  question("下面关于存货核算，错误的描述是",
+    answer("可以先生成凭证，再进行入库核算", correct = TRUE),
+    answer("先入库核算，再出库核算"),
+    answer("出库成本核算后先检查合法性报告"),
+    answer("次月入库，当月出库也可以进行成本成本核算", correct = TRUE)
   )
 )
 ```
