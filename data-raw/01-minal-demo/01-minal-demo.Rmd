@@ -7,6 +7,7 @@ runtime: shiny_prerendered
 ```{r setup, include=FALSE}
 library(learnr)
 knitr::opts_chunk$set(echo = FALSE)
+tutorial_options(exercise.timelimit = 120,exercise.cap = '代码练习区',exercise.startover = TRUE)
 ```
 
 
@@ -18,7 +19,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Write the R code required to add two plus two:
 
-```{r two-plus-two, exercise=TRUE}
+```{r two-plus-two, exercise=TRUE,exercise.cap='代码练习区'}
 
 ```
 
@@ -50,11 +51,20 @@ mtcars
 head(mtcars)
 ```
 
+```{r filter, exercise=TRUE}
+# Change the filter to select February rather than January
+nycflights <- filter(nycflights, month == 1)
+```
+
+```{r filter-solution}
+nycflights <- filter(nycflights, month == 2)
+```
+
 ### Quiz
 
 *You can include any number of single or multiple choice questions as a quiz. Use the `question` function to define a question and the `quiz` function for grouping multiple questions together.*
 
-Some questions to verify that you understand the purposes of various base and recommended R packages:
+下面我们来测试R语言与ERP相关的基础知识:
 
 ```{r quiz}
 quiz(

@@ -899,7 +899,8 @@ Tutorial.prototype.$initializeExerciseEditors = function() {
       add_submit_button("fa-check-square-o", "btn-primary", "Submit Answer", true);
     
     // create run button
-    var run_button = add_submit_button("fa-play", "btn-success", "Run Code", false);
+    //change the button name from Run Code to 运行代码
+    var run_button = add_submit_button("fa-play", "btn-success", "运行代码", false);
     
     // create code div and add it to the input div
     var code_div = $('<div class="tutorial-exercise-code-editor"></div>');
@@ -1036,7 +1037,8 @@ Tutorial.prototype.$addSolution = function(exercise, panel_heading, editor) {
   function addHelperButton(icon, caption) {
     var button = $('<a class="btn btn-light btn-xs btn-tutorial-solution"></a>');
     button.attr('role', 'button');
-    button.attr('title', caption);
+     button.attr('title', caption);
+   
     button.append($('<i class="fa ' + icon + '"></i>'));
     button.append(' ' + caption); 
     panel_heading.append(button); 
@@ -1044,8 +1046,10 @@ Tutorial.prototype.$addSolution = function(exercise, panel_heading, editor) {
   }
   
   // function to add a hint button
+  // change from caption to '提示'
   function addHintButton(caption) {
     return addHelperButton("fa-lightbulb-o", caption);  
+     
   }
   
   // helper function to record solution/hint requests
@@ -1058,7 +1062,9 @@ Tutorial.prototype.$addSolution = function(exercise, panel_heading, editor) {
   
   // add a startover button
   if (editor.tutorial.startover_code !== null) {
-    var startOverButton = addHelperButton("fa-refresh", "Start Over");
+    //var startOverButton = addHelperButton("fa-refresh", "Start Over");
+    // change from Start Over to 再次一次！
+    var startOverButton = addHelperButton("fa-refresh", "再试一次");
     startOverButton.on('click', function() {
       editor.setValue(editor.tutorial.startover_code, -1);
       thiz.$clearExerciseOutput(exercise);
@@ -1073,7 +1079,8 @@ Tutorial.prototype.$addSolution = function(exercise, panel_heading, editor) {
     hintDiv.css('display', 'none');
     
     // create hint button
-    var button = addHintButton("Hint");
+    // change from Hint to '提示'
+    var button = addHintButton("提示");
    
     // handle showing and hiding the hint
     button.on('click', function() {
@@ -1125,7 +1132,9 @@ Tutorial.prototype.$addSolution = function(exercise, panel_heading, editor) {
     var hintIndex = 0;
     
     // create solution buttion
-    var button = addHintButton(caption);
+    //var button = addHintButton(caption);
+    //change from  caption to 方案
+    var button = addHintButton('方案提示');
    
     // handle showing and hiding the popover
     button.on('click', function() {
@@ -1188,7 +1197,8 @@ Tutorial.prototype.$addSolution = function(exercise, panel_heading, editor) {
           var copyButton = $('<a class="btn btn-info btn-xs ' + 
                              'btn-tutorial-copy-solution pull-right"></a>');
           copyButton.append($('<i class="fa fa-copy"></i>'));
-          copyButton.append(" Copy to Clipboard");
+          //copyButton.append(" Copy to Clipboard");
+           copyButton.append("复制到剪贴板！");
           popoverTitle.append(copyButton);
           var clipboard = new Clipboard(copyButton[0], {
             text: function(trigger) {
